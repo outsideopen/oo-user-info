@@ -1,11 +1,11 @@
 <?php 
 /*
-Plugin Name: User IP
-Plugin URI: http://adresseip.vpndock.com/plugin-adresse-ip-utilisateur-wordpress/
-Description: Show User IP address on public page, post or sidebar widget with a shortcode.
-Author: VPN Dock
-Version: 1.0.001
-Author URI: http://vpndock.com/
+Plugin Name: User Info 
+Plugin URI: https://github.com/outsideopen/wp-user-info
+Description: User information shortcodes, such as IP address, browser name and version, and platform.
+Author: Alex Standke - Outside Open
+Version: 1.0
+Author URI: http://outsideopen.com
 License: GPL2
 */
 

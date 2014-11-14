@@ -111,24 +111,78 @@ function getBrowser()
         'platform'  => $platform,
         'pattern'    => $pattern
     );
-} 
+}
 
-// shortcode [user_ip]
-function display_user_ip()
-{
-        $user_ip = $_SERVER['REMOTE_ADDR'];
+// [user_browser_name]
+function user_browser_name() {
+	$browser = getBrowser();
+	return $browser['name'];
+}
+add_shortcode('user_browser_name', 'user_browser_name');
+
+// [user_browser_version]
+function user_browser_version() {
+	$browser = getBrowser();
+	return $browser['version'];
+}
+add_shortcode('user_browser_version', 'user_browser_version');
+
+// [user_browser_name_and_version]
+function user_browser_name_and_version() {
+	$browser = getBrowser();
+	return $browser['name'] . ": " . $browser['version'];
+}
+add_shortcode('user_browser_name_and_version', 'user_browser_name_and_version');
+
+// [user_browser_platform]
+function user_browser_platform() {
+	$browser = getbrowser();
+	return $browser['platform'];
+}
+add_shortcode('user_browser_platform', 'user_browser_platform');
+
+// [user_ip]
+function user_ip() {
+	$user_ip = $_SERVER['REMOTE_ADDR'];
+	return $user_ip;
+}
+add_shortcode('user_ip', 'user_ip');
+
+// [user_host]
+function user_host() {
 	$user_host = $_SERVER['REMOTE_HOST'];
+	return $user_host;
+}
+add_shortcode('user_host', 'user_host');
+
+// [user_tld]
+function user_tld() {
+	$user_host = user_host();
+	$split_host = explode('.', $user_host);
+	$tld = implode('.', array_slice($split_host, -2, 2, true));
+	return $tld;
+}
+add_shortcode('user_tld', 'user_tld');
+
+// [user_browser_info]
+function user_browser_info() {
+	$ua=getBrowser();
+	$yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'] . " reports: <br >" . $ua['userAgent'];
+	return $yourbrowser;
+}
+add_shortcode('user_browser_info', 'user_browser_info');
+
+// [user_info]
+function user_info()
+{
 	$browser = getBrowser();
 	
 	return 
-	  $user_ip . "<br>" .
-	  $user_host . "<br>" .
-	  $browser['name'] . "<br>" . 
-	  $browser['platform'];
+	  user_ip() . "<br>" .
+	  user_tld() . "<br>" .
+	  user_browser_name() . "<br>" . 
+	  user_browser_platform();
 }
+add_shortcode('user_info', 'user_info');
 
-add_shortcode('user_ip', 'display_user_ip');
-
-// use shortcodes on Sidebar Widgets
 add_filter('widget_text', 'do_shortcode');
-

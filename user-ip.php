@@ -30,8 +30,8 @@ if(is_admin())
 function display_user_ip()
 {
         $user_ip = $_SERVER['REMOTE_ADDR'];
-	
-        return $user_ip;
+	$user_host = $_SERVER['REMOTE_HOST'];
+	return $user_ip . '<br>' . $user_host;
 }
 
 add_shortcode('user_ip', 'display_user_ip');

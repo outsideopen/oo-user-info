@@ -8,6 +8,7 @@ User information shortcodes for Wordpress.
  * `[user_browser_version]` - 38.0.2125.122
  * `[user_browser_name_and_version]` - Google Chrome: 38.0.2125.122
  * `[user_browser_platform]` - linux
+ * `[user_agent]` - Mozilla/5.0 (X11; Linux i686 (x86_64)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36
  * `[user_ip]` - 98.173.204.203
  * `[user_host]` - office.outsideopen.com
  * `[user_tld]` - outsideopen.com

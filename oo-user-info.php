@@ -1,7 +1,7 @@
 <?php 
 /*
 Plugin Name: OO User Info 
-Plugin URI: https://github.com/outsideopen/wp-user-info
+Plugin URI: https://github.com/outsideopen/oo-user-info
 Description: User information shortcodes, such as IP address, browser name and version, and platform.
 Author: Alex Standke - Outside Open
 Version: 1.0

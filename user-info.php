@@ -9,23 +9,7 @@ Author URI: http://outsideopen.com
 License: GPL2
 */
 
- 
-if(is_admin())
-	{
-		// add FAQ link on plugin page
-		function user_ip_faq_link($links)
-		{ 
-			$faq_link = '<a href="http://wordpress.org/plugins/user-ip/faq/" target="_blank">FAQ</a>'; 
-			//array_unshift($links, $faq_link);
-			array_push($links, $faq_link); 
-			return $links; 
-		}
-		
-		$plugin = plugin_basename(__FILE__); 
-		add_filter("plugin_action_links_$plugin", 'user_ip_faq_link' );
-	}
- 
-
+// Get browser information 
 // Found here: http://php.net/manual/en/function.get-browser.php#101125
 function getBrowser() 
 { 
@@ -167,7 +151,7 @@ add_shortcode('user_tld', 'user_tld');
 // [user_browser_info]
 function user_browser_info() {
 	$ua=getBrowser();
-	$yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'] . " reports: <br >" . $ua['userAgent'];
+	$yourbrowser= $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'];
 	return $yourbrowser;
 }
 add_shortcode('user_browser_info', 'user_browser_info');

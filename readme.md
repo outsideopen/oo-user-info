@@ -15,10 +15,10 @@ User information shortcodes for Wordpress.
 
 `[user_info]` provides a nicely formatted list of information:
 
-    98.173.204.203
-    outsideopen.com
-    Google Chrome
-    linux
+    IP: 98.173.204.203
+    Domain: outsideopen.com
+    Browser: Google Chrome
+    Platform: linux
 
 ## Installation
 

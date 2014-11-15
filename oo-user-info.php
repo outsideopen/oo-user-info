@@ -1,6 +1,6 @@
 <?php 
 /*
-Plugin Name: User Info 
+Plugin Name: OO User Info 
 Plugin URI: https://github.com/outsideopen/wp-user-info
 Description: User information shortcodes, such as IP address, browser name and version, and platform.
 Author: Alex Standke - Outside Open
@@ -169,10 +169,10 @@ function user_info()
 	$browser = getBrowser();
 	
 	return 
-	  user_ip() . "<br>" .
-	  user_tld() . "<br>" .
-	  user_browser_name() . "<br>" . 
-	  user_browser_platform();
+	  "IP: " . user_ip() . "<br>" .
+	  "Domain: " . user_tld() . "<br>" .
+	  "Browser: " . user_browser_name() . "<br>" . 
+	  "Platform: " . user_browser_platform();
 }
 add_shortcode('user_info', 'user_info');
 

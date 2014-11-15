@@ -132,6 +132,13 @@ function user_ip() {
 }
 add_shortcode('user_ip', 'user_ip');
 
+// [user_agent]
+function user_agent() {
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+	return $user_agent;
+}
+add_shortcode('user_agent', 'user_agent');
+
 // [user_host]
 function user_host() {
 	$user_host = $_SERVER['REMOTE_HOST'];
